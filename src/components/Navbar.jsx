@@ -51,7 +51,7 @@ export default function Navbar({ dark, setDark, scrolled, active, go }) {
             padding: "6px 14px", color: t.accent, cursor: "pointer",
             fontSize: "0.82rem", fontFamily: "'DM Mono', monospace", transition: "all 0.2s",
           }}>
-            <Ico name={dark ? "sun" : "moon"} size={14} color={t.accent} />
+            <Ico name={dark ? "flower" : "moon"} size={14} color={t.accent} />
             {dark ? "light" : "dark"}
           </button>
         </li>
