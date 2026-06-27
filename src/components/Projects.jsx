@@ -7,7 +7,7 @@ const PROJECTS = [
     desc: "An AI-powered microlearning app that uses voice interaction, peer feedback, and gamified missions to enhance student learning.",
     tags: ["AI", "Voice Interaction", "Gamification", "React"],
     accent: "#e05585",
-    live: "https://eduverso.vercel.app",
+    live: "https://eduverso-self.vercel.app",
     github: "https://github.com/ncamuaa/EDUVERSO-SBA.git",
   },
   {
