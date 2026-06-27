@@ -31,7 +31,7 @@ const PROJECTS = [
     desc: "This portfolio website — a personal branding site built with React and Vite featuring dark/light mode, animations, and a working contact form.",
     tags: ["React", "Vite", "Formspree", "CSS-in-JS"],
     accent: "#c47ed8",
-    live: "https://nicoleiris.dev",
+    live: "https://nicole-portfolio-theta.vercel.app/",
     github: "https://github.com/nicoleiris/portfolio",
   },
 ];
