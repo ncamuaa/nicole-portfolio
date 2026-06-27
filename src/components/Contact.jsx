@@ -3,7 +3,7 @@ import { useT } from "../theme";
 import { FadeIn } from "./shared";
 import { Ico } from "./icons";
 
-// ── Paste your Formspree URL here (https://formspree.io → New Form → copy endpoint)
+
 const FORMSPREE_URL = "https://formspree.io/f/mbdvgdwq";
 
 const CONTACTS = [
