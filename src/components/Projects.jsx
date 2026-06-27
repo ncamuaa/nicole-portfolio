@@ -23,8 +23,8 @@ const PROJECTS = [
     desc: "A system for organizing and managing events, including schedules, attendee tracking, and budget management.",
     tags: ["React", "Node.js", "MongoDB", "Dashboard"],
     accent: "#f4a7b9",
-    live: "https://event-planner.vercel.app",
-    github: "https://github.com/nicoleiris/event-planner",
+    live: "https://eventplanner-ashen-phi.vercel.app",
+    github: "https://github.com/ncamuaa/eventplanner.git",
   },
   {
     title: "Dev Portfolio",
