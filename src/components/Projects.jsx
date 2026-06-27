@@ -1,5 +1,6 @@
 import { useT } from "../theme";
 import { FadeIn, HoverCard } from "./shared";
+import { useState, useEffect } from "react";
 
 const PROJECTS = [
   {
@@ -9,6 +10,11 @@ const PROJECTS = [
     accent: "#e05585",
     live: "https://eduverso-self.vercel.app",
     github: "https://github.com/ncamuaa/EDUVERSO-SBA.git",
+    images: [
+      "/images/eduverso-1.png",
+      "/images/eduverso-2.png",
+      "/images/eduverso-3.png",
+    ],
   },
   {
     title: "Donor Management System",
@@ -17,6 +23,10 @@ const PROJECTS = [
     accent: "#d4b8e0",
     live: null,
     github: "https://github.com/nicoleiris/donor-system",
+    images: [
+      "/images/donor-1.png",
+      "/images/donor-2.png",
+    ],
   },
   {
     title: "Event Planner",
@@ -25,6 +35,10 @@ const PROJECTS = [
     accent: "#f4a7b9",
     live: "https://eventplanner-ashen-phi.vercel.app",
     github: "https://github.com/ncamuaa/eventplanner.git",
+    images: [
+      "/images/eventplanner-1.png",
+      "/images/eventplanner-2.png",
+    ],
   },
   {
     title: "Dev Portfolio",
@@ -33,8 +47,73 @@ const PROJECTS = [
     accent: "#c47ed8",
     live: "https://nicole-portfolio-theta.vercel.app/",
     github: "https://github.com/nicoleiris/portfolio",
+    images: [
+      "/images/portfolio-1.png",
+      "/images/portfolio-2.png",
+    ],
   },
 ];
+
+function ImageSlider({ images, accent }) {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    if (!images || images.length <= 1) return;
+    const timer = setInterval(() => {
+      setCurrent(prev => (prev + 1) % images.length);
+    }, 2500);
+    return () => clearInterval(timer);
+  }, [images]);
+
+  if (!images || images.length === 0) return null;
+
+  return (
+    <div style={{ position: "relative", width: "100%", height: 200, overflow: "hidden", background: "#f0f0f0" }}>
+      {images.map((src, i) => (
+        <img
+          key={i}
+          src={src}
+          alt={`screenshot ${i + 1}`}
+          style={{
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            opacity: i === current ? 1 : 0,
+            transition: "opacity 0.7s ease-in-out",
+          }}
+        />
+      ))}
+      {/* Dot indicators */}
+      {images.length > 1 && (
+        <div style={{
+          position: "absolute",
+          bottom: 8,
+          left: "50%",
+          transform: "translateX(-50%)",
+          display: "flex",
+          gap: 5,
+        }}>
+          {images.map((_, i) => (
+            <div
+              key={i}
+              onClick={() => setCurrent(i)}
+              style={{
+                width: i === current ? 16 : 6,
+                height: 6,
+                borderRadius: 999,
+                background: i === current ? accent : "rgba(255,255,255,0.6)",
+                transition: "all 0.3s ease",
+                cursor: "pointer",
+              }}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function Projects({ dark }) {
   const t = useT(dark);
@@ -84,6 +163,10 @@ export default function Projects({ dark }) {
             <FadeIn key={p.title} delay={i * 0.09}>
               <HoverCard dark={dark} t={t} style={{ background: t.card, border: `1px solid ${t.border}`, borderRadius: 16, overflow: "hidden", cursor: "default" }}>
                 <div style={{ height: 5, background: `linear-gradient(90deg,${p.accent},${p.accent}88)` }} />
+
+                {/* Image Slider */}
+                <ImageSlider images={p.images} accent={p.accent} />
+
                 <div style={{ padding: "1.6rem", display: "flex", flexDirection: "column", gap: 0 }}>
                   <div style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, fontSize: "1.1rem", color: t.heading, marginBottom: "0.5rem" }}>{p.title}</div>
                   <div style={{ fontSize: "0.88rem", color: t.muted, lineHeight: 1.65, marginBottom: "1rem" }}>{p.desc}</div>
@@ -110,7 +193,7 @@ export default function Projects({ dark }) {
                       </svg>
                       GitHub
                     </a>
-                    <a href={p.github} target="_blank" rel="noopener noreferrer" className="proj-btn">
+                    <a href={p.live || p.github} target="_blank" rel="noopener noreferrer" className="proj-btn">
                       <svg width="11" height="11" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M7 1h4v4M11 1L5 7M4 2H2a1 1 0 00-1 1v7a1 1 0 001 1h7a1 1 0 001-1V8" />
                       </svg>
