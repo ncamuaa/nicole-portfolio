@@ -2,6 +2,36 @@ import { useT } from "../theme";
 import { FadeIn, HoverCard } from "./shared";
 import { useState, useEffect } from "react";
 
+// EduVerso screenshots (imported so Vite bundles them correctly from src/assets)
+import eduverso1 from "../assets/eduverso/eduverso_1.png";
+import eduverso2 from "../assets/eduverso/eduverso_2.png";
+import eduverso3 from "../assets/eduverso/eduverso_3.png";
+import eduverso4 from "../assets/eduverso/eduverso_4.png";
+import eduverso5 from "../assets/eduverso/eduverso_5.png";
+import eduverso6 from "../assets/eduverso/eduverso_6.png";
+import eduverso7 from "../assets/eduverso/eduverso_7.png";
+
+// Event Planner screenshots
+import event1 from "../assets/event/event_1.png";
+import event2 from "../assets/event/event_2.png";
+import event3 from "../assets/event/event_3.png";
+import event4 from "../assets/event/event_4.png";
+
+// Dev Portfolio screenshots
+import portfolioImg1 from "../assets/portfolio/portfolio_1.png";
+import portfolioImg2 from "../assets/portfolio/portfolio_2.png";
+import portfolioImg3 from "../assets/portfolio/portfolio_3.png";
+import portfolioImg4 from "../assets/portfolio/portfolio_4.png";
+
+// Donor Management System screenshots (resmob folder)
+import resmob1 from "../assets/resmob/resmob_1.png";
+import resmob2 from "../assets/resmob/resmob_2.png";
+import resmob3 from "../assets/resmob/resmob_3.png";
+import resmob4 from "../assets/resmob/resmob_4.png";
+import resmob5 from "../assets/resmob/resmob_5.png";
+import resmob6 from "../assets/resmob/resmob_6.png";
+import resmob7 from "../assets/resmob/resmob_7.png";
+
 const PROJECTS = [
   {
     title: "EduVerso",
@@ -11,11 +41,13 @@ const PROJECTS = [
     live: "https://eduverso-self.vercel.app",
     github: "https://github.com/ncamuaa/EDUVERSO-SBA.git",
     images: [
-      "/images/eduverso-1.png",
-      "/images/eduverso-2.png",
-      "/images/eduverso-3.png",
-      "/images/eduverso-4.png",
-      "/images/eduverso-5.png",
+      eduverso1,
+      eduverso2,
+      eduverso3,
+      eduverso4,
+      eduverso5,
+      eduverso6,
+      eduverso7,
     ],
   },
   {
@@ -24,13 +56,16 @@ const PROJECTS = [
     tags: ["PHP", "MySQL", "CRUD", "Reporting"],
     accent: "#d4b8e0",
     live: null,
-    github: "https://github.com/nicoleiris/donor-system",
+    github: "https://github.com/nikowlliris/kc-donation-system-den.git",
+    note: "*Data shown is for demonstration purposes only.",
     images: [
-      "/images/donor-1.png",
-      "/images/donor-2.png",
-      "/images/donor-3.png",
-      "/images/donor-4.png",
-      "/images/donor-5.png",
+      resmob1,
+      resmob2,
+      resmob3,
+      resmob4,
+      resmob5,
+      resmob6,
+      resmob7,
     ],
   },
   {
@@ -41,11 +76,10 @@ const PROJECTS = [
     live: "https://eventplanner-ashen-phi.vercel.app",
     github: "https://github.com/ncamuaa/eventplanner.git",
     images: [
-      "/images/eventplanner-1.png",
-      "/images/eventplanner-2.png",
-      "/images/eventplanner-3.png",
-      "/images/eventplanner-4.png",
-      "/images/eventplanner-5.png",
+      event1,
+      event2,
+      event3,
+      event4,
     ],
   },
   {
@@ -56,11 +90,10 @@ const PROJECTS = [
     live: "https://nicole-portfolio-theta.vercel.app/",
     github: "https://github.com/nicoleiris/portfolio",
     images: [
-      "/images/portfolio-1.png",
-      "/images/portfolio-2.png",
-      "/images/portfolio-3.png",
-      "/images/portfolio-4.png",
-      "/images/portfolio-5.png",
+      portfolioImg1,
+      portfolioImg2,
+      portfolioImg3,
+      portfolioImg4,
     ],
   },
 ];
@@ -121,8 +154,7 @@ function ImageSlider({ images, accent, url }) {
               inset: 0,
               width: "100%",
               height: "100%",
-              objectFit: "cover",
-              objectPosition: "top",
+              objectFit: "contain",
               opacity: i === current ? 1 : 0,
               transition: "opacity 0.7s ease-in-out",
             }}
@@ -201,7 +233,7 @@ export default function Projects({ dark }) {
           <p style={{ color: t.muted, fontSize: "1.02rem", lineHeight: 1.72, maxWidth: 540 }}>A collection of real-world apps — from AI tutors to event dashboards.</p>
         </FadeIn>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: "1rem", marginTop: "2.5rem" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: "0.85rem", marginTop: "2.5rem" }}>
           {PROJECTS.map((p, i) => (
             <FadeIn key={p.title} delay={i * 0.09}>
               <HoverCard dark={dark} t={t} style={{ background: t.card, border: `1px solid ${t.border}`, borderRadius: 14, overflow: "hidden", cursor: "default" }}>
@@ -211,17 +243,21 @@ export default function Projects({ dark }) {
                   <ImageSlider images={p.images} accent={p.accent} url={p.live} />
                 </div>
 
-                <div style={{ padding: "0.8rem", display: "flex", flexDirection: "column", gap: 0 }}>
-                  <div style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, fontSize: "0.88rem", color: t.heading, marginBottom: "0.3rem" }}>{p.title}</div>
-                  <div style={{ fontSize: "0.75rem", color: t.muted, lineHeight: 1.6, marginBottom: "0.75rem" }}>{p.desc}</div>
+                <div style={{ padding: "0.75rem", display: "flex", flexDirection: "column", gap: 0 }}>
+                  <div style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, fontSize: "0.86rem", color: t.heading, marginBottom: "0.3rem" }}>{p.title}</div>
+                  <div style={{ fontSize: "0.74rem", color: t.muted, lineHeight: 1.6, marginBottom: "0.7rem" }}>{p.desc}</div>
 
-                  <div style={{ display: "flex", flexWrap: "wrap", gap: "0.35rem", marginBottom: "0.85rem" }}>
+                  {p.note && (
+                    <div style={{ fontSize: "0.65rem", color: t.muted, opacity: 0.75, fontStyle: "italic", marginTop: "-0.35rem", marginBottom: "0.7rem" }}>{p.note}</div>
+                  )}
+
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: "0.33rem", marginBottom: "0.8rem" }}>
                     {p.tags.map(tag => (
-                      <span key={tag} style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.65rem", background: dark ? "rgba(244,167,185,0.08)" : "rgba(201,116,143,0.07)", color: t.accent, padding: "2px 8px", borderRadius: 20, border: `1px solid ${t.border}` }}>{tag}</span>
+                      <span key={tag} style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.63rem", background: dark ? "rgba(244,167,185,0.08)" : "rgba(201,116,143,0.07)", color: t.accent, padding: "2px 8px", borderRadius: 20, border: `1px solid ${t.border}` }}>{tag}</span>
                     ))}
                   </div>
 
-                  <div style={{ display: "flex", gap: "0.4rem", flexWrap: "wrap", paddingTop: "0.75rem", borderTop: `1px solid ${t.border}` }}>
+                  <div style={{ display: "flex", gap: "0.4rem", flexWrap: "wrap", paddingTop: "0.7rem", borderTop: `1px solid ${t.border}` }}>
                     {p.live && (
                       <a href={p.live} target="_blank" rel="noopener noreferrer" className="proj-btn proj-btn-live">
                         <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
