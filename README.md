@@ -1,16 +1,48 @@
-# React + Vite
+# 🌸 Nicole Iris — Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+🔗 Live site: [nicole-portfolio-theta.vercel.app](https://nicole-portfolio-theta.vercel.app/)
 
-Currently, two official plugins are available:
+My personal developer portfolio, built to showcase my projects, skills and services as a full-stack developer.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📖 Overview
 
-## React Compiler
+A single-page portfolio site featuring an animated hero section, dark mode toggle, and dedicated sections for about, services, projects, skills, certifications, and contact.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the Oxlint configuration
+- **Frontend:** ⚛️ React, 🔷 TypeScript, 🎨 Tailwind CSS
+- **Deployment:** ▲ Vercel
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## ✨ Features
+
+- 📱 Responsive, mobile-friendly layout
+- 🌗 Light/dark mode toggle
+- ⌨️ Animated typing effect on the hero section
+- 🗂️ Project showcase with links to live demos and repos
+- 🏆 Skills and certifications overview
+- 📬 Contact section
+
+## 🚀 Getting Started
+
+```bash
+# Clone the repository
+git clone https://github.com/ncamuaa/nicole-portfolio.git
+
+# Navigate into the project
+cd nicole-portfolio
+
+# Install dependencies
+npm install
+
+# Run the development server
+npm run dev
+```
+
+## 💡 My Contribution
+
+I designed and built the entire site from scratch — layout, styling, dark mode logic, and content structure — as a way to showcase my full-stack development and UI/UX design skills.
+
+## 📫 Contact
+
+- 💼 LinkedIn: [linkedin.com/in/nicole-camua0423](https://www.linkedin.com/in/nicole-camua0423/)
+- 🐙 GitHub: [github.com/ncamuaa](https://github.com/ncamuaa)
