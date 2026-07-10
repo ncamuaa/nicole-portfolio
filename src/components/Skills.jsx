@@ -54,6 +54,10 @@ const CATEGORIES = [
       { name: "Node.js",  icon: "nodejs" },
       { name: "Python",   icon: "python" },
       { name: "Java",     icon: "java" },
+      { name: "C#" },
+      { name: "C++" },
+      { name: "Kotlin" },
+      { name: ".NET" },
       { name: "Express",  icon: "express" },
       { name: "FastAPI",  icon: "fastapi" },
       { name: "GraphQL",  icon: "graphql" },
@@ -89,7 +93,7 @@ const CATEGORIES = [
 // Flat list of every technology name, used for the scrolling marquee strip below the cards
 const ALL_TECH = [
   "React", "Next.js", "TypeScript", "JavaScript", "Tailwind", "Vue.js", "HTML5", "CSS3",
-  "Node.js", "Python", "Java", "Express", "FastAPI", "GraphQL", "Bash",
+  "Node.js", "Python", "Java", "C#", "C++", "Kotlin", ".NET", "Express", "FastAPI", "GraphQL", "Bash",
   "PostgreSQL", "MongoDB", "MySQL", "Redis", "Prisma",
   "Docker", "Kubernetes", "Git", "AWS", "Nginx", "Linux", "Vercel", "Figma", "Postman",
 ];
