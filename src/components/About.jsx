@@ -1,6 +1,6 @@
 import { useT } from "../theme";
 import { FadeIn } from "./shared";
-import resumeFile from "../assets/CAMUA_NICOLE_-_RESUME.pdf";
+import resumeFile from "../assets/CAMUA_NICOLE_RESUMEE.pdf";
 
 export default function About({ dark }) {
   const t = useT(dark);
